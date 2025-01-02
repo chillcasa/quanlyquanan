@@ -1,5 +1,5 @@
 import http from "@/lib/http";
-import { LoginBody, LoginBodyType, LoginResType } from "@/schemaValidations/auth.schema";
+import { LoginBodyType, LoginResType } from "@/schemaValidations/auth.schema";
 
 const authApiRequest = {
     sLogin: (body: LoginBodyType) => http.post<LoginResType>('/auth/login', body),
