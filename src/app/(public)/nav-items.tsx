@@ -9,7 +9,7 @@ import { useEffect, useState } from 'react'
 const menuItems = [
   {
     title: 'Món ăn',
-    href: '/menu' // authRequired = indefined la  da dang nhap hay chua deu cho hien thi
+    href: '/menu'
   },
   {
     title: 'Đơn hàng',
@@ -18,12 +18,12 @@ const menuItems = [
   {
     title: 'Đăng nhập',
     href: '/login',
-    authRequired: false // false la chua dang nhap thi se hien thi
+    authRequired: false
   },
   {
     title: 'Quản lý',
     href: '/manage/dashboard',
-    authRequired: true // true la dang nhap roi moi hien thi
+    authRequired: true
   }
 ]
 
@@ -34,7 +34,7 @@ const menuItems = [
 export default function NavItems({ className }: { className?: string }) {
   const [isAuth, setIsAuth] = useState(false)
   useEffect (() => {
-    setIsAuth(Boolean(getAccessTokenFromLocalStorage))
+    setIsAuth(Boolean(getAccessTokenFromLocalStorage()))
   })
   return menuItems.map((item) => {
     if(
