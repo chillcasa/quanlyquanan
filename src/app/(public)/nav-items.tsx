@@ -27,6 +27,10 @@ const menuItems = [
   }
 ]
 
+
+// client: đầu tiên sẽ hiển thị món ăn và đăng nhập
+// nhưng sau đó thì client render ra là món án, đơn hàng và quản lý do đã check được trạng thái đăng nhập
+// đây là cách render static khi 
 export default function NavItems({ className }: { className?: string }) {
   const [isAuth, setIsAuth] = useState(false)
   useEffect (() => {
